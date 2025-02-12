@@ -7,7 +7,7 @@
 [pull]
     rebase = true
 [alias]
-    cm = commit
+    cm = commit -m
     cmp = commit --amend -C HEAD
     co = checkout
     pushf = push --force-with-lease
