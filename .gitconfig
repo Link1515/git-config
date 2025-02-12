@@ -1,23 +1,23 @@
 [core]
-	autocrlf = true # for windows
+    autocrlf = true # for windows
 [column]
-	ui = auto
+    ui = auto
 [branch]
-	sort = -committerdate
+    sort = -committerdate
 [pull]
-	rebase = true
+    rebase = true
 [alias]
     cmt = commit
-	cmtp = commit --amend -C HEAD
-	co = checkout
-	pushf = push --force-with-lease
-	stasha = stash --all
-	st = status
-	sts = status -s
-	br = branch
-	ll = log --pretty=format:'%C(yellow)%h%C(reset) %ad [%C(cyan)%an%C(reset)]%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset)' --date=short
-	lg = log --graph --pretty=format:'%C(yellow)%h%C(reset) %ad [%C(cyan)%an%C(reset)]%C(yellow)%d%C(reset) %s' --abbrev-commit --date=short
-	alias = config --get-regexp ^alias\\.
-	iac = "!giac() { git init && git add . && git commit -m 'Initial commit' ;}; giac"
+    cmtp = commit --amend -C HEAD
+    co = checkout
+    pushf = push --force-with-lease
+    stasha = stash --all
+    st = status
+    sts = status -s
+    br = branch
+    ll = log --pretty=format:'%C(yellow)%h%C(reset) %ad [%C(cyan)%an%C(reset)]%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset)' --date=short
+    lg = log --graph --pretty=format:'%C(yellow)%h%C(reset) %ad [%C(cyan)%an%C(reset)]%C(yellow)%d%C(reset) %s' --abbrev-commit --date=short
+    alias = config --get-regexp ^alias\\.
+    iac = "!giac() { git init && git add . && git commit -m 'Initial commit' ;}; giac"
     ac = "!git add . && git commit -m"
-	rc = "!grc() { git reset --hard && git clean -fdx ;}; read -p 'Do you want to run the following commands:\ngit reset --hard && git clean -fdx\n\n(Y/N) ' answer && [[ $answer == [Yy] ]] && grc"
+    rc = "!grc() { git reset --hard && git clean -fdx ;}; read -p 'Do you want to run the following commands:\ngit reset --hard && git clean -fdx\n\n(Y/N) ' answer && [[ $answer == [Yy] ]] && grc"
