@@ -1,0 +1,2 @@
+[includeIf "gitdir:D:/projects/"]
+    path = D:/projects/.gitconfig
