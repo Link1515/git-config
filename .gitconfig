@@ -1,5 +1,5 @@
 [core]
-    autocrlf = true # for windows
+    autocrlf = input
 [column]
     ui = auto
 [branch]
