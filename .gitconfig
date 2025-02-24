@@ -20,4 +20,4 @@
     alias = config --get-regexp ^alias\\.
     iac = "!giac() { git init && git add . && git commit -m 'Initial commit' ;}; giac"
     ac = "!git add . && git commit -m"
-    rc = "!grc() { git reset --hard && git clean -fdx ;}; read -p 'Do you want to run the following commands:\ngit reset --hard && git clean -fdx\n\n(Y/N) ' answer && [[ $answer == [Yy] ]] && grc"
+    rc = "!grc() { git reset --hard && git clean -fd ;}; read -p 'Do you want to run the following commands:\ngit reset --hard && git clean -fd\n\n(Y/N) ' answer && [[ $answer == [Yy] ]] && grc"
