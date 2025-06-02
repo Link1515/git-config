@@ -1,5 +1,6 @@
 [core]
     autocrlf = input
+    excludesFile = ~/.gitignore
 [column]
     ui = auto
 [branch]
