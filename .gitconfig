@@ -12,7 +12,7 @@
     cmp = commit --amend -C HEAD
     co = checkout
     pushf = push --force-with-lease
-    stasha = stash --all
+    sh = stash
     st = status
     sts = status -s
     br = branch
