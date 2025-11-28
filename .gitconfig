@@ -7,6 +7,11 @@
     sort = -committerdate
 [pull]
     rebase = true
+    ff = only
+[merge]
+	ff = only
+[advice]
+	diverging = false
 [alias]
     cm = commit -m
     cmp = commit --amend -C HEAD
