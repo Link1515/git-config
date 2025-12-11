@@ -13,6 +13,7 @@
 [advice]
 	diverging = false
 [alias]
+    msg = "!f(){ if git diff --cached --quiet; then echo 'No staged changes.'; return 1; fi; msg=$(git diff --cached | gemini -m 'gemini-2.5-flash-lite' -p 'Output exactly one single-line Conventional Commits message with no scope and no extra text. Format: <type>: <subject>. Allowed types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert. Subject: imperative, lowercase, <=72 chars, no trailing period, no newline.' 2>/dev/null); echo \"$msg\"; }; f"
     cm = commit -m
     cmp = commit --amend -C HEAD
     co = checkout
