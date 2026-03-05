@@ -31,7 +31,13 @@
     iac = "!giac() { git init && git add . && git commit -m 'Initial commit' ;}; giac"
     ac = "!git add . && git commit -m"
     rc = "!grc() { git reset --hard && git clean -fd ;}; read -p 'Do you want to run the following commands:\ngit reset --hard && git clean -fd\n\n(Y/N) ' answer && [[ $answer == [Yy] ]] && grc"
-    pr = "!gpr() { remote=${2:-origin}; git fetch "$remote" "pull/$1/head:pr-$1" && git checkout "pr-$1"; }; gpr"
+    pr = "!gpr() { \
+		remote=${2:-origin}; prId=\"$1\"; \
+		if [ -z \"$prId\" ]; then \
+			echo \"Usage: git pr <pr-id> [remote] (default: origin)\" >&2; return 2; \
+		fi; \
+		git fetch \"$remote\" \"pull/$prId/head:pr-$prId\" && git checkout \"pr-$prId\"; \
+	}; gpr"
     fpr = "!f(){ \
         spec=\"$1\"; url=\"$2\"; \
         remote=\"${spec%%:*}\"; branch=\"${spec#*:}\"; \
