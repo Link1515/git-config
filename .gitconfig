@@ -42,12 +42,12 @@
         spec=\"$1\"; url=\"$2\"; \
         remote=\"${spec%%:*}\"; branch=\"${spec#*:}\"; \
         if [ -z \"$remote\" ] || [ -z \"$branch\" ] || [ \"$spec\" = \"$remote\" ] || [ -z \"$url\" ]; then \
-        echo \"Usage: git fpr <remote>:<branch> <fork-url>\" >&2; return 2; \
+            echo \"Usage: git fpr <remote>:<branch> <fork-url>\" >&2; return 2; \
         fi; \
         if git remote get-url \"$remote\" >/dev/null 2>&1; then \
-        git remote set-url \"$remote\" \"$url\"; \
+            git remote set-url \"$remote\" \"$url\"; \
         else \
-        git remote add \"$remote\" \"$url\"; \
+            git remote add \"$remote\" \"$url\"; \
         fi; \
         git fetch \"$remote\" \"$branch\"; \
         git checkout -B \"$branch\" \"$remote/$branch\"; \
